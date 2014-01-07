@@ -1,0 +1,14 @@
+﻿<Window x:Class="HAL9000.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowState="Maximized"
+        WindowStyle="None"
+        Topmost="True"
+		AllowsTransparency="True"
+		Background="Transparent"
+		ShowInTaskbar="False"
+        Title="MainWindow" KeyDown="MainWindow_OnKeyDown">
+	<Grid>
+		<Image x:Name="HalImage" Visibility="Hidden" Stretch="None" Source="hal9000.png"></Image>
+	</Grid>
+</Window>
