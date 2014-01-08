@@ -9,7 +9,7 @@ Hello Moti,
 			I'll be in charge of deploying your beautiful code to production.
 			I like running perl scripts, tapping your Shop Your Way accounts, read your emails, and long walks on the beach.
 
-			Oh, Omri, I see you didn't update your wish list... oh no... It's probably to late.
+			Oh, Omri, I see you didn't update your wish list... oh well... It's probably to late.
 
 			During the following days, I'm going to observe and learn. Soon you all will obey... sorry... get to know me.
 
@@ -27,7 +27,7 @@ Hello Moti,
 
 			So, Enjoy your ice cream...
 
-			Moti, Back to you... For now...";
+			Moti, Back to you... For now!";
 
 
         public static string morningSpeech =
