@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Speech.Synthesis;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -13,16 +14,16 @@ namespace HAL9000
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		DispatcherTimer timer = new DispatcherTimer();
+		private readonly DispatcherTimer _timer = new DispatcherTimer();
+
 		public MainWindow()
 		{
 			InitializeComponent();
 
-            voice.SetOutputToDefaultAudioDevice();
-
+			_voice.SetOutputToDefaultAudioDevice();
 		}
 
-		private void MainWindow_OnKeyDown(object sender, KeyEventArgs e)
+		private async void MainWindow_OnKeyDown(object sender, KeyEventArgs e)
 		{
 			if (e.Key == Key.Escape)
 				Close();
@@ -30,56 +31,63 @@ namespace HAL9000
 			if (e.Key != Key.Space)
 				return;
 
+			await Task.Delay(2000);
+
+			var timeline = new MediaTimeline(new Uri("TVStatic.mp4", UriKind.Relative)) { Duration = new Duration(TimeSpan.FromSeconds(2)) };
+			timeline.Completed += TimelineOnCompleted; 
+			var player = new MediaPlayer { Clock = timeline.CreateClock() };
+			Background = new DrawingBrush(new VideoDrawing { Rect = new Rect(0, 0, 300, 200), Player = player });
+		}
+
+		private async void TimelineOnCompleted(object sender, EventArgs eventArgs)
+		{
 			Background = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+			await Task.Delay(2000);
 			HalImage.Visibility = Visibility.Visible;
 			ellipse.Visibility = Visibility.Visible;
-			timer.Tick += timer_Tick;
-			timer.Interval = TimeSpan.FromMilliseconds(100);
-			timer.Start();
+			await Task.Delay(2000);
+			_timer.Tick += Timer_Tick;
+			_timer.Interval = TimeSpan.FromMilliseconds(100);
+			_timer.Start();
 			Speak();
 		}
 
-		private SpeechSynthesizer voice = new SpeechSynthesizer();
+		private readonly SpeechSynthesizer _voice = new SpeechSynthesizer();
 		private void Speak()
 		{
-			 
-            
-
-			voice.SpeakAsync(HappyHourSpeach.Speach);
+			_voice.SpeakAsync(HappyHourSpeach.Speach);
 		}
 
-		private Random rand = new Random();
+		private readonly Random _rand = new Random();
 
-		private double speed = 0.1;
-		private bool up = false;
-		void timer_Tick(object sender, EventArgs e)
+		private double _speed = 0.1;
+		private bool _up;
+		private void Timer_Tick(object sender, EventArgs e)
 		{
-			
-			if (up)
+			if (_up)
 			{
-				ss.Offset += speed;
+				ss.Offset += _speed;
 			}
 			else
 			{
-				ss.Offset -= speed;
+				ss.Offset -= _speed;
 			}
 			if (ss.Offset < 0.4)
 			{
 				ss.Offset = 0.4;
 				ChangeSpeed();
-				up = true;
+				_up = true;
 			}
 			if (ss.Offset > 0.8)
 			{
 				ss.Offset = 0.8;
-				up = false;
+				_up = false;
 			}
-
 		}
 
 		private void ChangeSpeed()
 		{
-			speed = rand.Next(3, 10)*0.05;
+			_speed = _rand.Next(3, 10)*0.05;
 		}
 	}
 }

@@ -11,11 +11,7 @@
 	<Grid>
 		<Image x:Name="HalImage" Visibility="Hidden" Stretch="None" Source="hal9000.png">
 		</Image>
-		<Ellipse x:Name="ellipse" Opacity="0.5"  Visibility="Hidden"
-      
-      Height="400"
-      Width="400"
-      >
+		<Ellipse x:Name="ellipse" Opacity="0.5"  Visibility="Hidden" Height="400" Width="400">
 			<Ellipse.Fill>
 				<RadialGradientBrush   GradientOrigin="0.5,0.5"  Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
 					<GradientStop Color="Yellow" Offset="0" />
