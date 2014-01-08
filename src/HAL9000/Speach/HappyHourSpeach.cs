@@ -1,8 +1,8 @@
 ﻿namespace HAL9000.Speach
 {
-	public class HappyHourSpeach
+	public static class HappyHourSpeach
 	{
-		private static string Speach = @"Hello Moti
+		public static string Speach = @"Hello Moti
 			I wanted to introduce my self to everyone:
 			I am HAL 9000, and I'm the new member in the Sears Israel Team.
 			I'll be in charge of deploying your beautiful code to production.

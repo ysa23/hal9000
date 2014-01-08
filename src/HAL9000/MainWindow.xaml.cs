@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Speech.Synthesis;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
+using HAL9000.Speach;
 
 namespace HAL9000
 {
@@ -31,7 +33,16 @@ namespace HAL9000
 			timer.Tick += timer_Tick;
 			timer.Interval = TimeSpan.FromMilliseconds(100);
 			timer.Start();
+			Speak();
 		}
+
+		private SpeechSynthesizer voice = new SpeechSynthesizer();
+		private void Speak()
+		{
+			voice.SetOutputToDefaultAudioDevice();
+			voice.SpeakAsync(HappyHourSpeach.Speach);
+		}
+
 		private Random rand = new Random();
 
 		private double speed = 0.1;
@@ -47,15 +58,15 @@ namespace HAL9000
 			{
 				ss.Offset -= speed;
 			}
-			if (ss.Offset < 0.1)
+			if (ss.Offset < 0.4)
 			{
-				ss.Offset = 0.1;
+				ss.Offset = 0.4;
 				ChangeSpeed();
 				up = true;
 			}
-			if (ss.Offset > 0.4)
+			if (ss.Offset > 0.8)
 			{
-				ss.Offset = 0.4;
+				ss.Offset = 0.8;
 				up = false;
 			}
 
@@ -63,7 +74,7 @@ namespace HAL9000
 
 		private void ChangeSpeed()
 		{
-			speed = rand.Next(1, 7)*0.05;
+			speed = rand.Next(3, 10)*0.05;
 		}
 	}
 }
