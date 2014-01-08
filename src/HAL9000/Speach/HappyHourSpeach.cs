@@ -6,7 +6,7 @@
 			I wanted to introduce my self to everyone:
 			I am HAL 9000, and I'm the new member in the Sears Israel Team.
 			I'll be in charge of deploying your beautiful code to production.
-			I like... and walks on the beach
+			I like opening bay doors, taking over the world, and long walks on the beach.
 
 			During the following days, I'm going to observe and learn. Soon you all will obey... sorry... get to know me
 			After spending a whole day deploying your code I can say I learned a lot.
