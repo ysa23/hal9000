@@ -56,6 +56,17 @@ namespace HAL9000
 		private void Speak()
 		{
 			_voice.SpeakAsync(HappyHourSpeach.Speach);
+			_voice.SpeakCompleted += Voice_SpeakCompleted;
+		}
+
+		private async void Voice_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
+		{
+			_timer.Stop();
+			await Task.Delay(2000);
+			HalImage.Visibility = Visibility.Visible;
+			ellipse.Visibility = Visibility.Visible;
+			await Task.Delay(1000);
+			Close();
 		}
 
 		private readonly Random _rand = new Random();
