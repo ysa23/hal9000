@@ -55,7 +55,7 @@ namespace HAL9000
 		private readonly SpeechSynthesizer _voice = new SpeechSynthesizer();
 		private void Speak()
 		{
-			_voice.SpeakAsync(HappyHourSpeach.Speach);
+			_voice.SpeakAsync(Speeches.HappyHour);
 			_voice.SpeakCompleted += Voice_SpeakCompleted;
 		}
 
