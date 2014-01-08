@@ -17,6 +17,9 @@ namespace HAL9000
 		public MainWindow()
 		{
 			InitializeComponent();
+
+            voice.SetOutputToDefaultAudioDevice();
+
 		}
 
 		private void MainWindow_OnKeyDown(object sender, KeyEventArgs e)
@@ -39,7 +42,9 @@ namespace HAL9000
 		private SpeechSynthesizer voice = new SpeechSynthesizer();
 		private void Speak()
 		{
-			voice.SetOutputToDefaultAudioDevice();
+			 
+            
+
 			voice.SpeakAsync(HappyHourSpeach.Speach);
 		}
 
