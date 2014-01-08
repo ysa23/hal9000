@@ -9,8 +9,7 @@
 		ShowInTaskbar="False"
         Title="MainWindow" KeyDown="MainWindow_OnKeyDown">
 	<Grid>
-		<Image x:Name="HalImage" Visibility="Hidden" Stretch="None" Source="hal9000.png">
-		</Image>
+		<Image x:Name="HalImage" Visibility="Hidden" Stretch="None" Source="hal9000.png"/>
 		<Ellipse x:Name="ellipse" Opacity="0.5"  Visibility="Hidden" Height="400" Width="400">
 			<Ellipse.Fill>
 				<RadialGradientBrush   GradientOrigin="0.5,0.5"  Center="0.5,0.5" RadiusX="0.5" RadiusY="0.5">
@@ -21,5 +20,6 @@
 				</RadialGradientBrush>
 			</Ellipse.Fill>
 		</Ellipse>
+		<Image x:Name="SearsHarborImage" Visibility="Hidden" Stretch="None" Source="searsharbor.png"/>
 	</Grid>
 </Window>

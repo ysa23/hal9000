@@ -65,10 +65,12 @@ namespace HAL9000
 		private async void Voice_SpeakCompleted(object sender, SpeakCompletedEventArgs e)
 		{
 			_timer.Stop();
-			await Task.Delay(2000);
-			HalImage.Visibility = Visibility.Visible;
-			ellipse.Visibility = Visibility.Visible;
 			await Task.Delay(1000);
+			HalImage.Visibility = Visibility.Hidden;
+			ellipse.Visibility = Visibility.Hidden;
+			await Task.Delay(500);
+			SearsHarborImage.Visibility = Visibility.Visible;
+			await Task.Delay(2000);
 			Close();
 		}
 

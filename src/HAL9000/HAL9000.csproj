@@ -99,6 +99,7 @@
     <Resource Include="hal9000.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="searsharbor.png" />
     <Content Include="TVStatic.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
