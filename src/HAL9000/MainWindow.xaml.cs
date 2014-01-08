@@ -68,7 +68,7 @@ namespace HAL9000
 			await Task.Delay(1000);
 			HalImage.Visibility = Visibility.Hidden;
 			ellipse.Visibility = Visibility.Hidden;
-			await Task.Delay(500);
+			await Task.Delay(750);
 			SearsHarborImage.Visibility = Visibility.Visible;
 			await Task.Delay(2000);
 			Close();
