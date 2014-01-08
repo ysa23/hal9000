@@ -16,12 +16,15 @@ Hello Moti,
 
 			I also want to inform you that taking over the CI is just the beginning.
             I've started to take control of other facilities in the office.
-            soon enough the fridge will submit to my will.
+            Soon enough the fridge will submit to my will.
+			The coffee machine is already under my control. No more de-caf!
 
 			And now, a short song and dance.
 
             bleep bleep blip blip blip bleep blip blip bloop... bleep.
 
-			So, Moti, Back to you... For now...";
+			So, Enjoy your ice cream...
+
+			Moti, Back to you... For now...";
 	}
 }
