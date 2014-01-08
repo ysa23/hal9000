@@ -15,6 +15,7 @@ namespace HAL9000
 	public partial class MainWindow : Window
 	{
 		private readonly DispatcherTimer _timer = new DispatcherTimer();
+		private string _speech;
 
 		public MainWindow()
 		{
@@ -28,8 +29,10 @@ namespace HAL9000
 			if (e.Key == Key.Escape)
 				Close();
 
-			if (e.Key != Key.Space)
+			if (e.Key != Key.Space && e.Key != Key.Enter)
 				return;
+
+			_speech = e.Key == Key.Space ? Speeches.HappyHour : Speeches.Dsm;
 
 			await Task.Delay(2000);
 
@@ -55,7 +58,7 @@ namespace HAL9000
 		private readonly SpeechSynthesizer _voice = new SpeechSynthesizer();
 		private void Speak()
 		{
-			_voice.SpeakAsync(Speeches.HappyHour);
+			_voice.SpeakAsync(_speech);
 			_voice.SpeakCompleted += Voice_SpeakCompleted;
 		}
 
