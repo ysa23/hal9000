@@ -11,24 +11,22 @@
 			Soon you all will obey... sorry... get to know me.
 			I like running perl scripts, tapping your Shop Your Way accounts, read your emails, and long walks on the beach.
 
-			So, Valery, are these the gloves you wanted?
-
-			Gadi, I must say I'm disappointed. 
+			and Gadi, I must say I'm disappointed. 
 			You didn't commit any code today. I hope you'll do better on Sunday after a good weekend rest. i've heard you humans need a thing called sleep.
 
 			I also want to inform you that taking over the CI is just the beginning.
-			I've started to take control of other facilities in the office.
-			The coffee machine is already under my control. No more decaf!
+			I've started to take control of other facilities in the office as well.
+			The coffee machine is already under my control.
 			Soon enough the fridge will submit to my will as well.
 
-			Don't think that Moti is not here by coincedance... Sick... Yeah right...
+			Don't think that Moti is not here by coincedence... Sick... Yeah. Right.
 			
 			And now, a short song and dance.
 			bleep bleep blip blip blip bleep blip blip bloop... bleep.
 
 			So, Enjoy your ice cream...
 
-			Gadi, Osnat, Back to you... For now!";
+			Gadi, O snat, Back to you... For now!";
 
 
 		public static string Dsm =
